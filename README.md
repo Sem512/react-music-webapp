@@ -1,17 +1,8 @@
 # React + Vite
-# Music Player App
 
-## Description
-This is a Music Player App built with React and Tailwind CSS, utilizing the Deezer API to provide users with access to Deezer's music library. The app allows users to search for tracks, artists, and albums, manage their playlists, and control playback.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
-- User authentication with Deezer
-- Search for tracks, artists, and albums
-- Playback controls (play, pause, next, previous)
-- View user's top tracks and artists
-- Playlist management (create, view, modify playlists)
+Currently, two official plugins are available:
 
-## Technologies Used
-- React
-- Tailwind CSS
-- Deezer API
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
