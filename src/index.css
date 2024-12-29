@@ -1,3 +1,7 @@
+
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box;
 }
@@ -75,6 +79,16 @@ body {
   text-align: center;
 }
 
+.play-icon{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  display:none;
+}
+
+.track-card:hover .play-icon{
+  display: block;
+}
 
 .navbar {
   background-color: blue;
@@ -93,12 +107,41 @@ main {
   background-color: aqua;
   height: 10%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 i{
   color:red;
+}
+
+.current-track{
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  margin:10px;
+  width:40%;
+}
+
+.play-con{
+  background-color: red;
+  height:100%;
+  width:30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.playback-control {
+  width:100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: yellow;
 }
 
 .navbar-toggle{

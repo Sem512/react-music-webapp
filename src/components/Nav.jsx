@@ -10,7 +10,7 @@ function Navbar() {
     return (
         <div className="navbar">
             <button className="navbar-toggle" onClick={toggleNavbar}>
-            <i class="fi fi-rr-menu-burger"></i>
+            <i className="fi fi-rr-menu-burger"></i>
             </button>
             {isVisible && (
                 <nav>

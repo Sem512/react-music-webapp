@@ -1,22 +1,27 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './components/Header.jsx'
-import Navbar from './components/Nav.jsx'
-import PreviewPage from './components/PreviewPage.jsx'
-import Tracker from './components/Tracker.jsx'
+import React, { useState } from 'react';
+import Header from './components/Header';
+import PreviewPage from './components/PreviewPage';
+import Tracker from './components/Tracker';
+import Navbar from './components/Nav';
 
 function App() {
-  const [results, setResults] = useState([]);
-  return (
-    <div>
-      <Header setResults={setResults} />
+    const [results, setResults] = useState([]);
+    const [currentTrack, setCurrentTrack] = useState(null);
+
+    const handleTrackSelect = (track) => {
+      setCurrentTrack(track);
+  };
+
+    return (
+        <div>
+            <Header setResults={setResults} />
             <main>
-                <Navbar />
-                <PreviewPage results={results} />
+                <Navbar/>
+                <PreviewPage results={results} onTrackSelect={handleTrackSelect} /> 
             </main>
-    <Tracker/>
-    </div>
-  )
+            <Tracker track={currentTrack} />
+        </div>
+    );
 }
 
-export default App
+export default App;
