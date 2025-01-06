@@ -16,6 +16,7 @@ function Header({setResults}) {
 
         try {
             const response = await fetch(`/api/search?q=${query}`);
+            console.log('Response:', response);
             const data = await response.json();
             setResults(data.data);
             navigate("/results")
