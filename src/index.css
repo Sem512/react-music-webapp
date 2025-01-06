@@ -62,6 +62,24 @@ body {
   width:100%;
   max-height: 75vh;
 }
+.genres-page{
+  background-color: rgb(214, 114, 114);
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
+.favorites-page{
+  background-color: yellow;
+  width:100%;
+}
+.home-page{
+  background-color: rgb(130, 87, 170);
+  width:100%;
+}
+.playlists-page{
+  background-color: brown;
+  width:100%;
+}
 
 .track-list {
   display: grid;
@@ -78,6 +96,14 @@ body {
   overflow: hidden;
   text-align: center;
 }
+
+.horizontal-card{
+  background-color: white;
+  width:100%;
+  display: flex;
+  gap: 1px;
+}
+
 
 .play-icon{
   display: flex;
@@ -152,6 +178,15 @@ i{
   padding-right:15px;
   background-color: transparent;
   border: none;
+}
+.genre-name{
+  color: white;
+  margin: 5px;
+  font-size: 30px;
+}
+
+.swiper-button-prev .swiper-button-next{
+  font-size: 30px;
 }
 
 /* Responsive Design */

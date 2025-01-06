@@ -4,6 +4,9 @@ import { Howl } from 'howler';
 function Tracker({ track }) {
     const [Playing, setPlaying] = useState(false);
     const [currentSound, setCurrentSound] = useState(null);
+    const [currentTime, setCurrentTime] = useState(0); // Track the current time
+    const [duration, setDuration] = useState(0); // Track the track's duration
+    const [progress, setProgress] = useState(0); // Update seeker bar progress
 
     const togglePlayPause = () => {
         if (currentSound) {
@@ -15,8 +18,14 @@ function Tracker({ track }) {
             setPlaying(!Playing);
         }
     };
-    
-    let title,artist,album;
+
+    const handleSeekChange = (e) => {
+        const value = e.target.value;
+        if (currentSound) {
+            currentSound.seek((value / 100) * duration); // Seek to the new position
+        }
+        setProgress(value); // Update the progress bar value
+    };
 
     useEffect(() => {
         if (track && track.preview) {
@@ -26,6 +35,16 @@ function Tracker({ track }) {
             const sound = new Howl({
                 src: [track.preview],
                 html5: true,
+                onplay: () => {
+                    setDuration(sound.duration()); // Set the track's duration
+                },
+                onseek: () => {
+                    setCurrentTime(sound.seek()); // Update current time during playback
+                },
+                onend: () => {
+                    setPlaying(false);
+                    setProgress(0); // Reset progress when track ends
+                },
             });
             sound.play();
             setCurrentSound(sound);
@@ -39,6 +58,18 @@ function Tracker({ track }) {
         };
     }, [track]);
 
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            if (currentSound) {
+                const time = currentSound.seek();
+                setCurrentTime(time);
+                setProgress((time / duration) * 100); // Update progress as track plays
+            }
+        }, 1000); // Update every second
+
+        return () => clearInterval(intervalId); // Cleanup interval when component unmounts
+    }, [currentSound, duration]);
+
     const buttons = [
         { icon: "fi fi-rr-shuffle", action: "Shuffle" },
         { icon: "fi fi-rr-rewind", action: "Rewind" },
@@ -47,18 +78,18 @@ function Tracker({ track }) {
         { icon: "fi fi-rr-endless-loop", action: "Loop" },
     ];
 
+    // Default track details if no track is provided
+    let title, artist, album;
     if (!track) {
-        title="Track Title";
-        artist="Artist Name";
-        album="";
-    }
-    else{
-        title=track.title;
-        artist=track.artist.name;
-        album=track.album.cover
+        title = "Track Title";
+        artist = "Artist Name";
+        album = "";
+    } else {
+        title = track.title;
+        artist = track.artist.name;
+        album = track.album.cover;
     }
 
- 
     return (
         <section className="tracker">
             <div className="current-track">
@@ -75,6 +106,22 @@ function Tracker({ track }) {
                             <i className={btn.icon}></i>
                         </button>
                     ))}
+                </div>
+                <div className="seek-bar">
+                    <input
+                        type="range"
+                        id="seekerBar"
+                        min="0"
+                        max="100"
+                        value={progress}
+                        step="1"
+                        onChange={handleSeekChange}
+                    />
+                    <div className="time">
+                        <span>{`${Math.floor(currentTime / 60)}:${String(Math.floor(currentTime % 60)).padStart(2, '0')}`}</span>
+                        <span> / </span>
+                        <span>{`${Math.floor(duration / 60)}:${String(Math.floor(duration % 60)).padStart(2, '0')}`}</span>
+                    </div>
                 </div>
             </div>
         </section>

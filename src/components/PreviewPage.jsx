@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Card from './Card'
 
 function PreviewPage({ results, onTrackSelect }) {
     return (
@@ -6,14 +7,11 @@ function PreviewPage({ results, onTrackSelect }) {
             {results && results.length > 0 ? (
                 <div className="track-list">
                     {results.map((result, index) => (
-                        <div key={index} className="track-card">
-                            <img src={result.album.cover} alt={result.title} className="album-cover" />
-                            <h3 className="track-title">{result.title}</h3>
-                            <p className="artist-name">{result.artist.name}</p>
-                            <div className="play-icon" onClick={() => onTrackSelect(result)}>
-                                <i className="fi fi-rr-play-circle"></i>
-                            </div>
-                        </div>
+                        <Card 
+                            key={index}
+                            result={result}
+                            onTrackSelect={onTrackSelect}
+                        />
                     ))}
                 </div>
             ) : (

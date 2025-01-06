@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
     const [isVisible, setIsVisible] = useState(false);
@@ -15,9 +16,9 @@ function Navbar() {
             {isVisible && (
                 <nav>
                     <ul>
-                        <li>Genres</li>
-                        <li>Favorites</li>
-                        <li>Playlists</li>
+                        <li><NavLink to="/genres">Genres</NavLink></li>
+                        <li><NavLink to="/favorites">Favorites</NavLink></li>
+                        <li><NavLink to="/playlists">Playlists</NavLink></li>
                     </ul>
                 </nav>
             )}
