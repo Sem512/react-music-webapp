@@ -15,7 +15,7 @@ function Header({setResults}) {
     const handleSearch = async () => {
 
         try {
-            const response = await fetch(`/api/search?q=${query}`);
+            const response = await fetch(`/api/deezerProxy/search?q=${query}`);
             console.log('Response:', response);
             const data = await response.json();
             setResults(data.data);
