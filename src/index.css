@@ -95,6 +95,7 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
+  
 }
 
 .horizontal-card{
@@ -152,6 +153,15 @@ i{
   width:40%;
 }
 
+.list-card{
+  display: flex;
+  align-items: center;
+  background-color: white;
+  justify-content: space-between;
+  width: 80%;
+  margin: 30px;
+}
+
 .play-con{
   background-color: red;
   height:100%;
@@ -168,6 +178,9 @@ i{
   flex-direction: row;
   justify-content: space-evenly;
   background-color: yellow;
+}
+.container{
+  width: 100%;
 }
 
 .navbar-toggle{
