@@ -12,7 +12,7 @@ export default function GenreCom({name, playlistId,onTrackSelect}){
     useEffect(() => {
         async function fetchPlaylist() {
             try {
-                const response = await fetch(`/api/playlist/${playlistId}`);
+                const response = await fetch(`https://83g2xxt654.execute-api.us-east-1.amazonaws.com/default/playlist?playlistId=${playlistId}`);
                 const data = await response.json();
                 if (data.tracks && data.tracks.data) {
                     setTracks(data.tracks.data);

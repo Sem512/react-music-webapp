@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { NavLink, useNavigate } from "react-router-dom";
 
 function checkEnter(e){
@@ -14,8 +13,7 @@ function Header({setResults}) {
     const handleSearch = async () => {
 
         try {
-            const response = await fetch(`/api/deezerProxy?query=${query}`);
-            console.log('Response:', response);
+            const response = await fetch(`https://83g2xxt654.execute-api.us-east-1.amazonaws.com/default/search?q=${query}`);
             const data = await response.json();
             setResults(data.data);
             navigate("/results")
