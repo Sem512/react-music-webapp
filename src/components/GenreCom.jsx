@@ -28,20 +28,19 @@ export default function GenreCom({name, playlistId,onTrackSelect}){
         fetchPlaylist();
     }, []);
     return (
-            <div className='container swiper'>
-                <h2 className='genre-name'>{name}</h2>
-                <Swiper className='horizontal-card'
-                spaceBetween={30}
-                slidesPerView={6}
-                loop
-                >
-                    {tracks.map((track, index) => (
-                    <SwiperSlide key={index}>
-                    <Card result={track} onTrackSelect={onTrackSelect}/>
-                    </SwiperSlide>
-                ))}
-                </Swiper>
+            <div className='container'>
+            <h2 className='genre-name'>{name}</h2>
+            <Swiper className='horizontal-card'
+            spaceBetween={30}
+            slidesPerView={6}
+            >
+                {tracks.map((track, index) => (
+             <SwiperSlide key={index}>
+                <Card result={track} onTrackSelect={onTrackSelect}/>
+             </SwiperSlide>
+         ))}
+            </Swiper>
+            <hr className="genre-divider"/>
             </div>
-
     )
 }

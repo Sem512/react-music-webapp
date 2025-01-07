@@ -7,6 +7,7 @@ function Tracker({ track }) {
     const [currentTime, setCurrentTime] = useState(0); // Track the current time
     const [duration, setDuration] = useState(0); // Track the track's duration
     const [progress, setProgress] = useState(0); // Update seeker bar progress
+    const [volume, setVolume] = useState(0.5);
 
     const togglePlayPause = () => {
         if (currentSound) {
@@ -19,8 +20,15 @@ function Tracker({ track }) {
         }
     };
 
+    const setIcon = () =>{
+        if(!volume)
+            return (<i className="fi fi-rr-volume-mute volume-icon"></i>)
+        else
+            return (<i className="fi fi-rr-volume volume-icon"></i>)
+    };
+
     const handleSeekChange = (e) => {
-        const value = e.target.value;
+        const value = e.target.value;  
         if (currentSound) {
             currentSound.seek((value / 100) * duration); // Seek to the new position
         }
@@ -50,6 +58,7 @@ function Tracker({ track }) {
             setCurrentSound(sound);
             setPlaying(true);
         }
+        
         return () => {
             if (currentSound) {
                 currentSound.stop();
@@ -69,6 +78,13 @@ function Tracker({ track }) {
 
         return () => clearInterval(intervalId); // Cleanup interval when component unmounts
     }, [currentSound, duration]);
+
+    useEffect(() => {
+        if (currentSound) {
+            currentSound.volume(volume);
+        }
+    
+    }, [volume]);
 
     const buttons = [
         { icon: "fi fi-rr-shuffle", action: "Shuffle" },
@@ -108,6 +124,7 @@ function Tracker({ track }) {
                     ))}
                 </div>
                 <div className="seek-bar">
+                    <span>{`${Math.floor(currentTime / 60)}:${String(Math.floor(currentTime % 60)).padStart(2, '0')}`}</span>
                     <input
                         type="range"
                         id="seekerBar"
@@ -116,14 +133,23 @@ function Tracker({ track }) {
                         value={progress}
                         step="1"
                         onChange={handleSeekChange}
-                    />
-                    <div className="time">
-                        <span>{`${Math.floor(currentTime / 60)}:${String(Math.floor(currentTime % 60)).padStart(2, '0')}`}</span>
-                        <span> / </span>
-                        <span>{`${Math.floor(duration / 60)}:${String(Math.floor(duration % 60)).padStart(2, '0')}`}</span>
-                    </div>
+                    />    
+                    <span>{`${Math.floor(duration / 60)}:${String(Math.floor(duration % 60)).padStart(2, '0')}`}</span>
                 </div>
+                
             </div>
+            <div className="volume-control">
+                    <label htmlFor="volume">{setIcon()}</label>
+                    <input
+                        type="range"
+                        id="volume"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value={volume}
+                        onInput={(e) => setVolume(parseFloat(e.target.value))}
+                    />
+                </div>
         </section>
     );
 }

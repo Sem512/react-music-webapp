@@ -1,0 +1,77 @@
+.tracker {
+    background-color: #191414;
+    height: 11%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    padding-left:15px;
+    z-index: 1000;
+  }
+  
+  .seek-bar{
+    display:flex;
+    padding-bottom: 5px;
+  }
+
+  .seek-bar *{
+    padding-left: 12px;
+    padding-right: 15px;
+  }
+  
+  .current-track{
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    margin:10px;
+    width:30%;
+    height: 100%;
+    align-items: center;
+    padding:5px;
+    background-color: transparent;
+  }
+  
+  .seek-bar{
+    width: 70%;
+  }
+  
+  input[type="range"]{
+    width:70%;
+    accent-color: white;
+    border: 0px;
+  }
+  
+  input[type="range"]:hover::-webkit-slider-thumb,input[type="range"]:hover{
+    accent-color: #FF5500;
+    opacity:1; 
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Removes default styling */
+    opacity:0;
+    border-radius: 100%; /* Make it circular */
+    cursor: pointer; /* Add a pointer cursor */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+    appearance: none;
+  }
+  
+  .volume-icon{
+    font-size: 18px;
+    color: #FF5500;
+  }
+
+  .current-track img{
+    width:70px;
+    height:70px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right:20px;
+  }
+  
+  .current-track h3,.current-track p{
+    background: linear-gradient(to right, #FF5500, #f87939,#ff945e);
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text; 
+  }
