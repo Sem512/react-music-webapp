@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import ListCard from '../components/ListCard';
+import '../index.css'
 
-export default function HomePage(){
+export default function HomePage({onTrackSelect}){
     const [songs, setSongs] = useState([])
-    const [count, setCount] = useState(0)
+
 
     useEffect(() => {
         async function getData(){
@@ -24,16 +25,17 @@ export default function HomePage(){
 
     return(
         <div className='home-page'>
-            <h1>Popular hits</h1>
-            {songs.map((item, index) =>  (<ListCard 
+            <h1>Popular Right Now!</h1>
+            {songs.map((result, index) =>  (<ListCard 
                     num={index+1}
-                    key={item.id}
-                    image={item.album.cover_small}
-                    title={item.title_short}
-                    artist={item.artist.name}
-                    album={item.album.title}
-                    duration={item.duration}
-                    setCount={setCount}
+                    key={result.id}
+                    image={result.album.cover_small}
+                    title={result.title_short}
+                    artist={result.artist.name}
+                    album={result.album.title}
+                    duration={result.duration}
+                    onTrackSelect={onTrackSelect}
+                    result={result}
                         />
                     ) 
                         )}

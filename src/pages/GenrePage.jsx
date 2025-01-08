@@ -4,7 +4,7 @@ import 'swiper/css/bundle';
 
 import GenreCom from '../components/GenreCom';
 
-export default function GenrePage({onTrackSelect }) {
+export default function GenrePage({onTrackSelect,setFavList,favList}) {
     const dictId = {
         'Rock': 13238299403,
         'Pop': 1282483245,
@@ -25,6 +25,8 @@ export default function GenrePage({onTrackSelect }) {
                                     name={item}
                                     playlistId={dictId[item]}
                                     onTrackSelect={onTrackSelect}
+                                    setFavList={setFavList}
+                                    favList={favList}
                                 />
             ))}
         </div>

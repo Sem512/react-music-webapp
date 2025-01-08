@@ -1,0 +1,42 @@
+.navbar {
+    background-color: #121212; 
+    flex-direction: column;
+    height: auto;
+    display: flex;
+  }
+  
+  .navbar i{
+    color: #FF5500;
+  }
+  
+  .navbar ul{
+    list-style: none;
+    padding: 0; 
+    margin: 0; 
+    width: 15vw;
+  }
+  
+  .navbar ul li a{
+    text-decoration: none; /* Remove underline */
+    color: white; /* Default text color */
+    font-size: 16px; /* Adjust font size */
+    padding: 10px 20px; /* Add padding inside links */
+    display: flex; /* Flex layout for icon and text alignment */
+    align-items: center; /* Center icon and text vertically */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar ul li a:hover {
+    background-color: #282828;
+    color: #FF5500;
+  }
+
+  .navbar-toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:5px;
+    padding-right:15px;
+    background-color: transparent;
+    border: none;
+  }

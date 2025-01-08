@@ -30,24 +30,23 @@ body {
   display: flex;
   flex-direction: column;
   padding: 10px 20px;
+  width: 100vw;
 }
 
-.favorites-page{
-  background-color: yellow;
-  width:100%;
-}
 .home-page{
-  background-color: rgb(130, 87, 170);
+  background-color:#282828;
   width:100%;
   overflow-y: auto;
-  max-height: 80vh;
+  min-height: 80vh;
 }
+
 .playlists-page{
   background-color: brown;
   width:100%;
 }
 
 .container{
+  width: 100vw;
 }
 
 ::-webkit-scrollbar {
@@ -66,136 +65,15 @@ body {
   background: #555;
 }
 
-.genres-page h1{
-  color:#FF5500;
-  letter-spacing: 0.025em;
-  line-height: 1.5em;
-}
 
-.genre-name::first-letter{
-  color: #FF5500;
-  font-size: 40px;
-}
-
-.genre-divider{
-  margin-top:30px;
-  border-top: 1px solid #282828;
-  box-shadow: 1px 2px 1px #622101;
-}
-
-.track-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.track-card {
-  position: relative; /* Required for positioning the overlay */
-    width: 200px; /* Adjust card width */
-    height: 300px; /* Adjust card height */
-    background-color:#282828;
-    color:#FF5500;
-    border: 0px;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: transform 0.3s ease;
-    padding-top: 45px;
-    padding-bottom: 45px;
-}
-
-.track-card:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
-}
-
-.album-cover {
-  width: 100%;
-  height: auto;
-}
-
-.play-icon{
-  position: absolute; /* Overlay on top of the card */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    display: flex;
-    padding: 70px 60px;
-    justify-content: center;
-    align-items: center;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease; /* Smooth fade-in effect */
-    cursor: pointer;
-}
-
-.play-icon i {
-  font-size: 48px; /* Large play icon */
-  color:#FF5500;
-}
-
-.track-card:hover .play-icon {
-  opacity: 1;
-}
-
-.track-card:hover{
-  cursor:pointer;
-}
-
-.horizontal-card{
-  background-color:#121212;
-  display: flex;
-  gap: 1px;
+.home-page{
+  padding-left:20px;
+  padding-right: 20px;
+  padding-top: 20px;
 }
 
 
-.play-icon{
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  display:none;
-}
 
-.track-card:hover .play-icon{
-  display: block;
-}
-
-.navbar {
-  background-color: #121212; 
-  flex-direction: column;
-  height: auto;
-  display: flex;
-}
-
-.navbar i{
-  color: #FF5500;
-}
-
-.navbar ul{
-  list-style: none;
-  padding: 0; 
-  margin: 0; 
-  width: 15vw;
-}
-
-.navbar ul li a{
-  text-decoration: none; /* Remove underline */
-  color: white; /* Default text color */
-  font-size: 16px; /* Adjust font size */
-  padding: 10px 20px; /* Add padding inside links */
-  display: flex; /* Flex layout for icon and text alignment */
-  align-items: center; /* Center icon and text vertically */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar ul li a:hover {
-  background-color: #282828;
-  color: #FF5500;
-}
 
 main {
   background-color: purple;
@@ -207,63 +85,6 @@ main {
   background-color: goldenrod;
 }
 
-
-.list-card{
-  display: flex;
-  align-items: center;
-  background-color: white;
-  justify-content: space-between;
-  width: 80%;
-  margin: 30px;
-}
-
-.play-con{
-  background-color: transparent;
-  height:100%;
-  width:30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.playback-control {
-  width:100%;
-  display:flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  background-color: transparent;
-}
-
-.playback-control button{
-  background-color: transparent;
-  border:0px;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.playback-control button i{
-  color:#FF5500;
-  font-size: 25px;
-  padding-right:10px;
-  padding-top:10px;
-}
-
-
-.navbar-toggle{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top:5px;
-  padding-right:15px;
-  background-color: transparent;
-  border: none;
-}
 .genre-name{
   color: white;
   margin: 5px;
