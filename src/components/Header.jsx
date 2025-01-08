@@ -17,6 +17,7 @@ function Header({setResults}) {
             setResults(data.data);
             navigate("/results")
         } catch (error) {
+            console.log(error)
             console.error('Error fetching data:', error);
             alert('Failed to fetch search result');
         }
