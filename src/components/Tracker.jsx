@@ -3,6 +3,7 @@ import { Howl } from 'howler';
 
 function Tracker({ track }) {
     const [Playing, setPlaying] = useState(false);
+    const [Looping,setLooping] = useState(false);
     const [currentSound, setCurrentSound] = useState(null);
     const [currentTime, setCurrentTime] = useState(0); // Track the current time
     const [duration, setDuration] = useState(0); // Track the track's duration
@@ -88,12 +89,40 @@ function Tracker({ track }) {
     
     }, [volume]);
 
+    const toggleShuffle = () => {
+        console.log("Shuffle mode toggled");
+        // Will add later
+    };
+    
+    const rewind = () => {
+        if (currentSound) {
+            const newTime = Math.max(currentSound.seek() - 10, 0); 
+            currentSound.seek(newTime);
+            setProgress((newTime / duration) * 100); 
+        }
+    };
+    
+    const forward = () => {
+        if (currentSound) {
+            const newTime = Math.min(currentSound.seek() + 10, duration);
+            currentSound.seek(newTime);
+            setProgress((newTime / duration) * 100); 
+        }
+    };
+    
+    const toggleLoop = () => {
+            currentSound.loop(!currentSound.loop());
+            setLooping(!Looping);
+    };
+
+
+
     const buttons = [
-        { icon: "fi fi-rr-shuffle", action: "Shuffle" },
-        { icon: "fi fi-rr-rewind", action: "Rewind" },
+        { icon: "fi fi-rr-shuffle", action: "Shuffle", onClick: toggleShuffle },
+        { icon: "fi fi-rr-rewind", action: "Rewind", onClick: rewind },
         { icon: Playing ? "fi fi-rr-pause-circle" : "fi fi-rr-play-circle", action: "Play/Pause", onClick: togglePlayPause },
-        { icon: "fi fi-rr-forward", action: "Forward" },
-        { icon: "fi fi-rr-endless-loop", action: "Loop" },
+        { icon: "fi fi-rr-forward", action: "Forward", onClick: forward },
+        { icon: Looping? "fi fi-rr-arrows-repeat-1" : "fi fi-rr-arrows-repeat", action: "Loop", onClick: toggleLoop},
     ];
 
     // Default track details if no track is provided

@@ -33,6 +33,7 @@ export default function GenreCom({name, playlistId,onTrackSelect,setFavList,favL
                 <Swiper className='horizontal-card'
                 spaceBetween={0}
                 slidesPerView={6}
+                autoplay={true}
                 >
                     {tracks.map((track, index) => (
                     <SwiperSlide key={index}>
