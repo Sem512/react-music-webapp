@@ -39,7 +39,7 @@
 - **Routing**: React Router for seamless page transitions
 - **Local Storage**: For persisting favorites across sessions
 
-## **Future Enhancements88
+## **Future Enhancements**
 - Add user authentication for personalized playlists.
 - Integrate full-track playback using premium APIs.
 - Implement dark/light theme switching.
