@@ -1,128 +1,195 @@
 .tracker {
-    background-color: #191414;
-    height: 11%;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    padding-left:15px;
-    z-index: 1000;
-  }
-  .current-track i{
-    display: flex;
-    margin-right: 30px;
-    font-size: 50px;
-    align-self: center;
+  background-color: #191414;
+  height: 11%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  padding-left: 15px;
+  z-index: 1000;
+}
 
+/* Current Track Section */
+.current-track i {
+  display: flex;
+  margin-right: 30px;
+  font-size: 50px;
+  align-self: center;
+}
 
-  }
-  .seek-bar{
-    display:flex;
-    padding-bottom: 5px;
+.current-track {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  width: 30%;
+  height: 100%;
+  align-items: center;
+  padding: 5px;
+  background-color: transparent;
+}
+
+.current-track img {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+.current-track h3,
+.current-track p,
+.current-track i {
+  background: linear-gradient(to right, #FF5500, #f87939, #ff945e);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* Seek Bar */
+.seek-bar {
+  display: flex;
+  width: 70%;
+  padding-bottom: 5px;
+}
+
+.seek-bar * {
+  padding-left: 12px;
+  padding-right: 15px;
+}
+
+input[type="range"] {
+  width: 70%;
+  accent-color: white;
+  border: 0px;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb,
+input[type="range"]:hover {
+  accent-color: #FF5500;
+  opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Volume Icon */
+.volume-icon {
+  font-size: 18px;
+  color: #FF5500;
+}
+
+/* Play Controls */
+.play-con {
+  background-color: transparent;
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.playback-control {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: transparent;
+}
+
+.playback-control button {
+  background-color: transparent;
+  border: 0px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.playback-control button i {
+  color: #FF5500;
+  font-size: 25px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tracker {
+      height: 35%; /* Increase height for touch interactions */
+      flex-direction: column; /* Stack elements vertically */
+      padding: 10px; /* Add padding for smaller screens */
   }
 
-  .seek-bar *{
-    padding-left: 12px;
-    padding-right: 15px;
-  }
-  
-  .current-track{
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    margin:10px;
-    width:30%;
-    height: 100%;
-    align-items: center;
-    padding:5px;
-    background-color: transparent;
-  }
-  
-  .seek-bar{
-    width: 70%;
-  }
-  
-  input[type="range"]{
-    width:70%;
-    accent-color: white;
-    border: 0px;
-  }
-  
-  input[type="range"]:hover::-webkit-slider-thumb,input[type="range"]:hover{
-    accent-color: #FF5500;
-    opacity:1; 
-  }
-  
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Removes default styling */
-    opacity:0;
-    border-radius: 100%; /* Make it circular */
-    cursor: pointer; /* Add a pointer cursor */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
-    appearance: none;
-  }
-  
-  .volume-icon{
-    font-size: 18px;
-    color: #FF5500;
+  .current-track {
+      width: 100%; /* Take full width */
+      margin: 0;
+      justify-content: center;
+      text-align: center;
   }
 
-  .current-track img{
-    width:70px;
-    height:70px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-right:20px;
-  }
-  
-  .current-track h3,.current-track p, .current-track i{
-    background: linear-gradient(to right, #FF5500, #f87939,#ff945e);
-    -webkit-text-fill-color: transparent; 
-    -webkit-background-clip: text; 
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 2.5vh;
+  .current-track img {
+      width: 50px; /* Smaller album art */
+      height: 50px;
   }
 
-
-  .play-con{
-    background-color: transparent;
-    height:100%;
-    width:30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  .seek-bar {
+      width: 90%; /* Expand to fit screen width */
   }
-  
+
+  .play-con {
+      width: 100%; /* Adjust controls to fit full width */
+      margin-top: 10px;
+  }
+
+  .playback-control button {
+      width: 40px;
+      height: 40px;
+  }
+
+  .playback-control button i {
+      font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .tracker {
+    height: 25%; /* Increase height for touch interactions */
+    flex-direction: column; /* Stack elements vertically */
+    padding: 10px; /* Add padding for smaller screens */
+}
+
+  .current-track img {
+      width: 40px;
+      height: 40px;
+  }
+
+  .seek-bar {
+      width: 100%;
+  }
+
   .playback-control {
-    width:100%;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: transparent;
+      justify-content: space-between; /* Space out buttons evenly */
   }
-  
-  .playback-control button{
-    background-color: transparent;
-    border:0px;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+
+  .playback-control button {
+      width: 35px;
+      height: 35px;
   }
-  
-  .playback-control button i{
-    color:#FF5500;
-    font-size: 25px;
-    padding-right:10px;
-    padding-top:10px;
+
+  .playback-control button i {
+      font-size: 18px;
   }
-  
-  
+}

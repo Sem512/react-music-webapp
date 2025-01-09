@@ -107,3 +107,39 @@
     transition: opacity 0.3s ease; /* Smooth fade-in effect */
     cursor: pointer;
   }
+
+  @media (max-width: 480px) {
+    .list-card{
+      gap:15px;
+      overflow: hidden;
+    }
+    
+    .list-card h3{
+      font-size: 0.8rem;
+      align-items: center;
+      justify-content: start;
+      max-width: 100%;
+      text-wrap: nowrap;
+    }
+    h3:nth-of-type(n+3){
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .list-card{
+      gap:15px;
+      overflow: auto;
+    }
+    
+    .list-card h3{
+      font-size: 0.8rem;
+      align-items: center;
+      justify-content: start;
+      max-width: 100%;
+      text-wrap: nowrap;
+    }
+    h3:nth-of-type(n+3){
+      display: none;
+    }
+  }

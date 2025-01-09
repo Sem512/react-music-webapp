@@ -27,24 +27,26 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 30px;
   }
   
   .track-card {
     position: relative; /* Required for positioning the overlay */
       width: 200px; /* Adjust card width */
-      height: 300px; /* Adjust card height */
+      height: 290px; /* Adjust card height */
       background-color:#282828;
-      border: 0px;
+      color:#FF5500;
+      border: 1px groove #121212;
       border-radius: 8px;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       transition: transform 0.3s ease;
       padding-top: 45px;
       padding-bottom: 45px;
-      
+      overflow: hidden;
   }
 
   .track-card h3{
@@ -64,6 +66,7 @@
   
   .track-card:hover {
     transform: scale(1.05); /* Slight zoom on hover */
+    border: 1px inset #121212;
   }
   
   .album-cover {
