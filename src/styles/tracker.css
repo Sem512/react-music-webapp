@@ -166,7 +166,7 @@ input[type="range"]::-webkit-slider-thumb {
 @media (max-width: 480px) {
 
   .tracker {
-    height: 25%; /* Increase height for touch interactions */
+    height: fit-content; /* Increase height for touch interactions */
     flex-direction: column; /* Stack elements vertically */
     padding: 10px; /* Add padding for smaller screens */
 }

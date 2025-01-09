@@ -14,6 +14,7 @@ body {
   min-height: 100vh;
   background-color: #121212;
   box-sizing: border-box; /* Include padding and border in element's total width/height */
+  overflow: hidden;
 }
 
 .preview-page {
@@ -38,7 +39,7 @@ body {
   background-color:#282828;
   width:100%;
   overflow-y: auto;
-  max-height: 100%;
+  max-height: 80vh;
   min-height:80vh;
 }
 

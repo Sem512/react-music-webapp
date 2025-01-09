@@ -100,4 +100,8 @@
     .fi {
         font-size: 1.2rem; /* Smaller search icon */
     }
+    .search-button {
+      display: none;
+      margin: 10px auto 0 auto; /* Center the button below the input */
+  }
 }
