@@ -33,7 +33,7 @@ useEffect(() => {
             <main>
                 <Navbar/>
                 <Routes>
-                    <Route index element={<HomePage />} />
+                    <Route index element={<HomePage onTrackSelect={handleTrackSelect} />} />
                     <Route path="/home" element={<HomePage onTrackSelect={handleTrackSelect} />} />
                     <Route path="/genres" element={<GenrePage onTrackSelect={handleTrackSelect} setFavList={setFavList} favList={favList}/>}/>
                     <Route path="/results" element={<PreviewPage results={results} onTrackSelect={handleTrackSelect} setFavList={setFavList} favList={favList}/> } />
