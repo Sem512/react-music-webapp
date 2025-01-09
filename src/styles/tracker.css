@@ -81,7 +81,12 @@
     background: linear-gradient(to right, #FF5500, #f87939,#ff945e);
     -webkit-text-fill-color: transparent; 
     -webkit-background-clip: text; 
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.5vh;
   }
+
 
   .play-con{
     background-color: transparent;
@@ -120,68 +125,4 @@
     padding-top:10px;
   }
   
-  @media (max-width: 768px) {
-    .tracker {
-        height: 15%; /* Increase height for touch interactions */
-        flex-direction: column; /* Stack elements vertically */
-        padding: 10px; /* Add padding for smaller screens */
-    }
-
-    .current-track {
-        width: 100%; /* Take full width */
-        margin: 0;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .current-track img {
-        width: 50px; /* Smaller album art */
-        height: 50px;
-    }
-
-    .seek-bar {
-        width: 90%; /* Expand to fit screen width */
-    }
-
-    .play-con {
-        width: 100%; /* Adjust controls to fit full width */
-        margin-top: 10px;
-    }
-
-    .playback-control button {
-        width: 40px;
-        height: 40px;
-    }
-
-    .playback-control button i {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .tracker {
-        height: 20%; /* Further increase height for smaller devices */
-    }
-
-    .current-track img {
-        width: 40px;
-        height: 40px;
-    }
-
-    .seek-bar {
-        width: 100%;
-    }
-
-    .playback-control {
-        justify-content: space-between; /* Space out buttons evenly */
-    }
-
-    .playback-control button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .playback-control button i {
-        font-size: 18px;
-    }
-}
+  

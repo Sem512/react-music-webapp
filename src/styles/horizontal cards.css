@@ -21,7 +21,49 @@
     color:#FF5500;
     padding:5px 20px;
     transition: transform 0.3s ease;
+    font-size: 14px;
+    line-height: 1.5em;
+    letter-spacing: 0.005em;
+    word-spacing: 0.05em;
+    font-style: italic;
+    cursor:default
   }
+
+  .list-card span{
+    font-weight: bold;
+    color: #d04702;
+  }
+
+  h3:nth-of-type(3){
+      font-size: 15px;
+      line-height: 1.5vh;
+      font-weight: bold;
+      color:#622100;
+      transition: color 1s;
+  }
+
+  h3:nth-of-type(3):hover,h3:nth-of-type(1):hover,h3:nth-of-type(2):hover{
+      color: #FF5500;
+  }
+
+  h3:nth-of-type(2){
+    font-size: 15px;
+    color:#843209;
+    transition: color 1s;
+  }
+
+  h3:nth-of-type(1){
+    font-style: italic;
+    font-weight: 500;
+    color: #a23f0e;
+    transition: color 1s;
+  }
+
+  h3:nth-of-type(4){
+    font-weight: 300;
+    font-size: 14px;
+    color:#FF5500;
+}
 
   .list-card img {
     object-fit: cover; /* Ensures images maintain aspect ratio */
@@ -65,29 +107,3 @@
     transition: opacity 0.3s ease; /* Smooth fade-in effect */
     cursor: pointer;
   }
-
-  @media (max-width: 768px) {
-
-}
-
-@media (max-width: 480px) {
-
-  .list-card{
-    gap:15px;
-    overflow: hidden;
-  }
-  
-  .list-card h3{
-    font-size: 0.8rem;
-    align-items: center;
-    justify-content: start;
-    max-width: 100%;
-    text-wrap: nowrap;
-  }
-
-
-
-  h3:nth-of-type(n+2){
-    display: none;
-  }
-}

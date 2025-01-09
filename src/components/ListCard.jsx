@@ -1,6 +1,6 @@
 import {React,useState} from 'react'
 
-export default function ListCard({ num, image,result, title, artist, album, duration, onTrackSelect }) {
+export default function ListCard({ num, image, result, title, artist, album, duration, onTrackSelect }) {
     return (
         <div className="list-card">
             <span>{num}</span>

@@ -3,7 +3,6 @@ import { Howl } from 'howler';
 
 function Tracker({ track }) {
     const [Playing, setPlaying] = useState(false);
-    const [Looping,setLooping] = useState(false);
     const [currentSound, setCurrentSound] = useState(null);
     const [currentTime, setCurrentTime] = useState(0); // Track the current time
     const [duration, setDuration] = useState(0); // Track the track's duration
@@ -21,11 +20,11 @@ function Tracker({ track }) {
         }
     };
 
-    const setIcon = () =>{
+    const Mute = () =>{
         if(!volume)
-            return (<i className="fi fi-rr-volume-mute volume-icon"></i>)
+           setVolume(0.1)
         else
-            return (<i className="fi fi-rr-volume volume-icon"></i>)
+            setVolume(0)
     };
 
     const handleSeekChange = (e) => {
@@ -59,7 +58,7 @@ function Tracker({ track }) {
             sound.play();
             setCurrentSound(sound);
             setPlaying(true);
-            setVolume(0.1);
+            setVolume(0.05);
         }
         
         return () => {
@@ -89,40 +88,12 @@ function Tracker({ track }) {
     
     }, [volume]);
 
-    const toggleShuffle = () => {
-        console.log("Shuffle mode toggled");
-        // Will add later
-    };
-    
-    const rewind = () => {
-        if (currentSound) {
-            const newTime = Math.max(currentSound.seek() - 10, 0); 
-            currentSound.seek(newTime);
-            setProgress((newTime / duration) * 100); 
-        }
-    };
-    
-    const forward = () => {
-        if (currentSound) {
-            const newTime = Math.min(currentSound.seek() + 10, duration);
-            currentSound.seek(newTime);
-            setProgress((newTime / duration) * 100); 
-        }
-    };
-    
-    const toggleLoop = () => {
-            currentSound.loop(!currentSound.loop());
-            setLooping(!Looping);
-    };
-
-
-
     const buttons = [
-        { icon: "fi fi-rr-shuffle", action: "Shuffle", onClick: toggleShuffle },
-        { icon: "fi fi-rr-rewind", action: "Rewind", onClick: rewind },
+        { icon: "fi fi-rr-shuffle", action: "Shuffle" },
+        { icon: "fi fi-rr-rewind", action: "Rewind" },
         { icon: Playing ? "fi fi-rr-pause-circle" : "fi fi-rr-play-circle", action: "Play/Pause", onClick: togglePlayPause },
-        { icon: "fi fi-rr-forward", action: "Forward", onClick: forward },
-        { icon: Looping? "fi fi-rr-arrows-repeat-1" : "fi fi-rr-arrows-repeat", action: "Loop", onClick: toggleLoop},
+        { icon: "fi fi-rr-forward", action: "Forward" },
+        { icon: "fi fi-rr-endless-loop", action: "Loop" },
     ];
 
     // Default track details if no track is provided
@@ -144,7 +115,7 @@ function Tracker({ track }) {
                 
                 {!album? <i className="fi fi-ss-music-alt"></i> : <img src={album} alt="Album cover" className="album-cover" />}
                 <div>
-                    <h3 className="track-title">{title}</h3>
+                    <p className="track-title">{title}</p>
                     <p className="artist-name">{artist}</p>
                 </div>
             </div>
@@ -172,7 +143,7 @@ function Tracker({ track }) {
                 
             </div>
             <div className="volume-control">
-                    <label htmlFor="volume">{setIcon()}</label>
+                    <label htmlFor="volume" onClick={Mute}>{volume?<i className="fi fi-rr-volume volume-icon"></i>:<i className="fi fi-rr-volume-mute volume-icon"></i>}</label>
                     <input
                         type="range"
                         id="volume"

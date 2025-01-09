@@ -1,12 +1,19 @@
 .genres-page h1{
-    color:#FF5500;
+  color: white;
     letter-spacing: 0.025em;
     line-height: 1.5em;
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 30px;
+  }
+
+  .genres-page h1::first-letter{
+    color:#FF5500;
+    font-size: 40px;
   }
   
   .genre-name::first-letter{
     color: #FF5500;
-    font-size: 40px;
   }
   
   .genre-divider{
@@ -20,37 +27,48 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
+    gap: 20px;
   }
   
   .track-card {
     position: relative; /* Required for positioning the overlay */
       width: 200px; /* Adjust card width */
-      height: 290px; /* Adjust card height */
+      height: 300px; /* Adjust card height */
       background-color:#282828;
-      color:#FF5500;
-      border: 1px groove #121212;
+      border: 0px;
       border-radius: 8px;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
       transition: transform 0.3s ease;
       padding-top: 45px;
       padding-bottom: 45px;
-      overflow: hidden;
+      
+  }
+
+  .track-card h3{
+    font-size: 17px;
+    line-height: 2.5vh;
+    font-weight: 600;
+    color: #d44700;
+  }
+
+  .track-card p{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1vh;
+    font-style: italic;
+    color: #a83801;
   }
   
   .track-card:hover {
     transform: scale(1.05); /* Slight zoom on hover */
-    border: 1px inset #121212;
   }
   
   .album-cover {
     width: 100%;
     height: auto;
-
   }
   
   .play-icon{
@@ -102,9 +120,9 @@
   }
   
   .horizontal-card{
-    background-color:#282828;
+    background-color:#121212;
     display: flex;
-    height:fit-content;
+    gap: 1px;
     width: 1920px;
   }
   
