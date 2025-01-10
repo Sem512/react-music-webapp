@@ -88,6 +88,11 @@
     }
 }
 @media (max-width: 480px) {
+    .header{
+      position: relative;
+      height: fit-content; /* Increase height for touch interactions */
+      flex-direction: column; /* Stack elements vertically */
+    }
     /* Further adjust for very small screens */
     .logo {
         font-size: 1rem; /* Smaller logo font */

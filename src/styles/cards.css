@@ -20,7 +20,6 @@
     margin-top:30px;
     border-top: 1px solid #282828;
     box-shadow: 1px 2px 1px #282828;
-    width: 100vw;
   }
   
   .track-list {
@@ -149,4 +148,5 @@
   .track-card:hover .play-icon{
     display: block;
   }
+
   

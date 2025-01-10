@@ -126,6 +126,11 @@ main {
 
   main {
     padding: 0.5rem;
+    overflow: auto;
+  }
+
+  .genres-page{
+    overflow-x: hidden;
   }
 
 }

@@ -8,7 +8,7 @@
   width: 100%;
   color: white;
   padding-left: 15px;
-  z-index: 1000;
+  z-index: 800;
 }
 
 /* Current Track Section */
@@ -166,9 +166,14 @@ input[type="range"]::-webkit-slider-thumb {
 @media (max-width: 480px) {
 
   .tracker {
+    position: relative;
     height: fit-content; /* Increase height for touch interactions */
     flex-direction: column; /* Stack elements vertically */
-    padding: 10px; /* Add padding for smaller screens */
+}
+
+.current-track{
+  margin:0;
+  padding:0px
 }
 
   .current-track img {
@@ -191,5 +196,9 @@ input[type="range"]::-webkit-slider-thumb {
 
   .playback-control button i {
       font-size: 18px;
+  }
+
+  .volume-control{
+    display:none;
   }
 }
