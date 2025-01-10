@@ -20,7 +20,7 @@
     background-color: #121212;
     color:#FF5500;
     padding:5px 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease;
     font-size: 14px;
     line-height: 1.5em;
     letter-spacing: 0.005em;
@@ -39,17 +39,13 @@
       line-height: 1.5vh;
       font-weight: bold;
       color:#622100;
-      transition: color 1s;
-  }
-
-  h3:nth-of-type(3):hover,h3:nth-of-type(1):hover,h3:nth-of-type(2):hover{
-      color: #FF5500;
+      transition: color 3s;
   }
 
   h3:nth-of-type(2){
     font-size: 15px;
     color:#843209;
-    transition: color 1s;
+    transition: color 2s;
   }
 
   h3:nth-of-type(1){
@@ -62,7 +58,8 @@
   h3:nth-of-type(4){
     font-weight: 300;
     font-size: 14px;
-    color:#FF5500;
+    color:#622100;
+    transition: color 3s;
 }
 
   .list-card img {
@@ -90,8 +87,13 @@
     opacity: 0.6;
   }
 
-  .list-card:hover{
+  .list-card:hover h3{
     transform:scale(1.01);
+    color: #FF5500;
+  }
+
+  .list-card:hover{
+    transform:scale(1.02)
   }
   
   .play-icon-small{
