@@ -17,12 +17,12 @@
   }
   
   .navbar ul li a{
-    text-decoration: none; /* Remove underline */
-    color: white; /* Default text color */
-    font-size: 16px; /* Adjust font size */
-    padding: 10px 20px; /* Add padding inside links */
-    display: flex; /* Flex layout for icon and text alignment */
-    align-items: center; /* Center icon and text vertically */
+    text-decoration: none; 
+    color: white;
+    font-size: 16px; 
+    padding: 10px 20px; 
+    display: flex; 
+    align-items: center; 
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   

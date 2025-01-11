@@ -16,7 +16,7 @@
     margin:0px;
     border-radius: 4px;
     margin-bottom: 5px;
-    border-bottom: 1px solid #ccc; /* Optional: Divider between cards */
+    border-bottom: 1px solid #ccc; 
     background-color: #121212;
     color:#FF5500;
     padding:5px 20px;
@@ -63,7 +63,7 @@
 }
 
   .list-card img {
-    object-fit: cover; /* Ensures images maintain aspect ratio */
+    object-fit: cover; 
   }
 
   .image-container{
@@ -76,7 +76,7 @@
   }
   
   .image-container img{
-    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+    transition: opacity 0.5s ease; 
   }
   
   .list-card:hover .play-icon-small{

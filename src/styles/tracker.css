@@ -11,7 +11,6 @@
   z-index: 800;
 }
 
-/* Current Track Section */
 .current-track i {
   display: flex;
   margin-right: 30px;
@@ -48,7 +47,7 @@
   -webkit-background-clip: text;
 }
 
-/* Seek Bar */
+
 .seek-bar {
   display: flex;
   width: 70%;
@@ -81,13 +80,12 @@ input[type="range"]::-webkit-slider-thumb {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Volume Icon */
+
 .volume-icon {
   font-size: 18px;
   color: #FF5500;
 }
 
-/* Play Controls */
 .play-con {
   background-color: transparent;
   height: 100%;
@@ -128,29 +126,29 @@ input[type="range"]::-webkit-slider-thumb {
 /* Responsive Design */
 @media (max-width: 768px) {
   .tracker {
-      height: 35%; /* Increase height for touch interactions */
-      flex-direction: column; /* Stack elements vertically */
-      padding: 10px; /* Add padding for smaller screens */
+      height: 35%; 
+      flex-direction: column; 
+      padding: 10px; 
   }
 
   .current-track {
-      width: 100%; /* Take full width */
+      width: 100%; 
       margin: 0;
       justify-content: center;
       text-align: center;
   }
 
   .current-track img {
-      width: 50px; /* Smaller album art */
+      width: 50px;
       height: 50px;
   }
 
   .seek-bar {
-      width: 90%; /* Expand to fit screen width */
+      width: 90%; 
   }
 
   .play-con {
-      width: 100%; /* Adjust controls to fit full width */
+      width: 100%; 
       margin-top: 10px;
   }
 
@@ -167,8 +165,8 @@ input[type="range"]::-webkit-slider-thumb {
 @media (max-width: 480px) {
 
   .tracker {
-    height: fit-content; /* Increase height for touch interactions */
-    flex-direction: column; /* Stack elements vertically */
+    height: fit-content;
+    flex-direction: column; 
 }
 
 .current-track{
