@@ -43,11 +43,19 @@ body {
   min-height:80vh;
 }
 
-.playlists-page{
-  background-color: brown;
-  width:100%;
+.playlist-page{
+  background-color: rgb(255, 255, 255);
+  width:100vw;
+  justify-content: center;
+  padding-right: 50px;
+  text-indent: 50px;
 }
-
+.playlist-page img{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  width: 50%
+}
 .container{
   width: 100vw;
 }

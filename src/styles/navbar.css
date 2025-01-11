@@ -1,7 +1,7 @@
 .navbar {
     background-color: #121212; 
     flex-direction: column;
-    height: auto;
+    height: 100vh;
     display: flex;
   }
   
@@ -39,4 +39,17 @@
     padding-right:15px;
     background-color: transparent;
     border: none;
+  }
+
+  @media (max-width: 768px) {
+    .navbar{
+      height:auto;
+  }
+  }
+
+
+  @media (max-width: 480px) {
+    .navbar{
+      height:auto;
+  }
   }

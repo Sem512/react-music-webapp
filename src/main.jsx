@@ -6,6 +6,7 @@ import './styles/header.css'
 import './styles/horizontal cards.css'
 import './styles/navbar.css'
 import './styles/cards.css'
+import './styles/error-page.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 

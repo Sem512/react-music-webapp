@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 import GenreCom from '../components/GenreCom';

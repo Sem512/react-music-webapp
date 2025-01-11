@@ -4,9 +4,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 
-function Header({setResults}) {
-    const [query, setQuery] = useState('');
-
+function Header({setResults,setQuery,query,currentQuery,setCurrentQuery}) {
     const navigate = useNavigate();
 
     const handleSearch = async () => {
@@ -15,10 +13,10 @@ function Header({setResults}) {
             const response = await fetch(`https://83g2xxt654.execute-api.us-east-1.amazonaws.com/default/search?q=${query}`);
             const data = await response.json();
             setResults(data.data);
-            navigate("/results")
+            setCurrentQuery(query);
         } catch (error) {
             console.error('Error fetching data:', error);
-            alert('Failed to fetch search result');
+            navigate("/error");
         }
     };
 

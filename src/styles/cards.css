@@ -106,7 +106,6 @@
     left:0;
     background:transparent;
     border: 0px;
-    z-index:10000
   }
   
   .fav-button i{
@@ -149,4 +148,9 @@
     display: block;
   }
 
-  
+  .no-results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#FF5500;
+  }
