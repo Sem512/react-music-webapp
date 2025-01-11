@@ -1,16 +1,16 @@
 import React from "react";
 
 export default function Card({ index, result, onTrackSelect, setFavList, favList }) {
-    const isFavorited = favList.some((item) => item.id === result.id); // Check if track is a favorite
+    // Determine if the current track is already in the favorites list
+    const isFavorited = favList.some((item) => item.id === result.id);
 
     function handleFavClick() {
         const newTrack = result;
         setFavList((prev) => {
-            if (prev.some((item) => item.id === newTrack.id)) {
-                return prev.filter((item) => item.id !== newTrack.id);
-            } else {
-                return [...prev, newTrack];
-            }
+            // If the track is already favorited, remove it; otherwise, add it
+            return prev.some((item) => item.id === newTrack.id)
+                ? prev.filter((item) => item.id !== newTrack.id)
+                : [...prev, newTrack];
         });
     }
 

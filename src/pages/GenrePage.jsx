@@ -5,14 +5,14 @@ import GenreCom from '../components/GenreCom';
 
 export default function GenrePage({onTrackSelect,setFavList,favList}) {
     const dictId = {
-        'Rock': 13238299403,
-        'Pop': 1282483245,
-        'Rap': 1996494362,
-        'K-Pop': 4096400722,
+        'Hip-Hop': 1996494362,
         'Afrobeats': 3153080842,
+        'Pop': 1282483245,
+        'Rock': 13238299403,
+        'K-Pop': 4096400722,
         'Dance': 706093725
     }
-    const genres = ['Rock','Pop','Rap','K-Pop','Afrobeats','Dance']
+    const genres = ['Hip-Hop','Afrobeats','Pop','Rock','K-Pop','Dance']
 
 
 

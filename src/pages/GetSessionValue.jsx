@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-
+// Same logic and structure as GetSavedValue.jsx 
 function getSavedValue(key, initialValue) {
   const savedValue = JSON.parse(sessionStorage.getItem(key));
   if (savedValue) return savedValue;
